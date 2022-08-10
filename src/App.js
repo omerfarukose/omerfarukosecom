@@ -1,23 +1,55 @@
-import logo from './logo.svg';
+import React, {useState} from 'react'
 import './App.css';
+import { Terminal } from './components/terminal/Terminal';
+import { FileCard } from './components/fileCard/FileCard';
+import { Navbar } from './components/navbar/Navbar';
+import { FolderView } from './components/folderView/FolderView';
+import Slide from 'react-reveal/Slide';
 
 function App() {
+
+  const [showIcon, setShowIcon] = useState(false)
+  const [showTerminal, setShowTerminal] = useState(true)
+  const [showFolder, setShowFolder] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Navbar/>
+
+      {
+        (!showFolder && !showTerminal) &&
+        <div>
+          <FileCard
+            fileName="Documents"
+            onCardClick={()=>{
+              setShowFolder(true)
+            }}/>
+
+          <FileCard 
+            onCardClick={()=>{
+              console.log("Card Clicked !")
+              setShowTerminal(true)
+            }} 
+            fileName="Terminal"
+            fileImage={'./images/terminal.png'}/>
+        </div>
+      }
+
+      {
+        showTerminal &&
+          <Terminal handleClose={()=>{
+            setShowTerminal(!setShowTerminal)
+          }}/>
+      }
+
+      {
+        showFolder &&
+        <FolderView 
+          handleClose={()=>{
+            setShowFolder(!showFolder)
+          }}/>
+      }
+      
     </div>
   );
 }
