@@ -4,7 +4,6 @@ import { Terminal } from './components/terminal/Terminal';
 import { FileCard } from './components/fileCard/FileCard';
 import { Navbar } from './components/navbar/Navbar';
 import { FolderView } from './components/folderView/FolderView';
-import Slide from 'react-reveal/Slide';
 
 function App() {
 
@@ -30,8 +29,18 @@ function App() {
               console.log("Card Clicked !")
               setShowTerminal(true)
             }} 
+            imageStyle={{height:"60px",width:"60px"}}
             fileName="Terminal"
             fileImage={'./images/terminal.png'}/>
+
+          <FileCard 
+            onCardClick={()=>{
+              console.log("Card Clicked !")
+              setShowTerminal(true)
+            }} 
+            imageStyle={{height:"50px",width:"50px"}}
+            fileName="Browser"
+            fileImage={'./images/safari.png'}/>
         </div>
       }
 
@@ -49,7 +58,6 @@ function App() {
             setShowFolder(!showFolder)
           }}/>
       }
-      
     </div>
   );
 }

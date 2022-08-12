@@ -23,7 +23,7 @@ export const FileCard = ( props ) => {
             className={isCardSelected ? "file-card-selected" : "file-card"}>
             {
                 fileImage ?
-                <img className='folder-image' src={fileImage} alt='#'/>
+                <img className='folder-image' src={fileImage} alt='#' style={imageStyle}/>
                 :
                 <img className='folder-image-default' src='./images/folder.png' alt='#'/>
             } 
