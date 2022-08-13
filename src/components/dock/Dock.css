@@ -1,0 +1,14 @@
+.dock-container{
+    position: absolute;
+    bottom: 20px;
+    width: 30%;
+    height: 43px;
+    background: rgba(81, 88, 94, 0.772);
+    opacity: 0.2;
+    border: 1px solid #676e72;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+

@@ -15,9 +15,9 @@ export const Terminal = ( props ) => {
                     omerfarukose terminal
                 </div>
             </div>
-            <div className='terminal-body'>
-                <p>getName()</p>
-            </div>
+            <textarea className='terminal-body'>
+                Hello there, this is some text in a text area
+            </textarea>
         </div>
     )
 }

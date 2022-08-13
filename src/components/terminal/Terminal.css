@@ -49,10 +49,6 @@
     width: 9px;
   }
   
-  .top-bar-icon{
-  
-  }
-  
   .top-bar-title{
     margin-left: 20px;
     color: #eceff1;
@@ -61,6 +57,7 @@
   
   .terminal-body{
     background-color: #4f759b ;
+    resize: none;
     flex: 1;
     border: 1px solid grey;
     border-top: 0px;
@@ -70,3 +67,8 @@
     padding: 20px;
     font-family: 'Inconsolata', monospace;
   }
+
+  .terminal-body:focus { 
+    outline: none !important;
+    border-color: #719ECE;
+ }

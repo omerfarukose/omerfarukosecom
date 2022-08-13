@@ -25,7 +25,7 @@ export const ThreeCircle = ( props ) => {
                 onClick={onMinimizeClick}
                 onMouseEnter={()=>{
                     onSetShowIcon(true)
-                }} 
+                }}
                 onMouseLeave={()=>{
                     onSetShowIcon(false)
                 }} 
