@@ -10,13 +10,41 @@
     padding: 0px 15px;
 }
 
-.navbar-logo{
-    width: 20px;
-    height: 20px;
-    margin-left: 7px;
-}
-
 .navbar-time{
     color: white;
     font-size: 14px;
+}
+
+.drop-down-menu-item{
+    color: white;
+    display: flex;
+    padding: 3px;
+    padding-left: 8px;
+    font-size: 14px;
+    margin-top: 5px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.drop-down-menu-item-hover{
+    color: white;
+    display: flex;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #235789;
+    padding: 3px;
+    padding-left: 8px;
+    border-radius: 6px;
+}
+
+.drop-down-menu-item-divider{
+    background-color: gray;
+    height: 1px;
+    margin-top: 5px;
+    width: 95%;
+    align-self: center;
 }

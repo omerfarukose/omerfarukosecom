@@ -1,24 +1,70 @@
-import React from 'react'
+import React, { useState} from 'react'
 import './Navbar.css'
-import { DropDownMenu } from '../DropDownMenu/DorpDownMenu'
+import { DropDownMenu } from '../dropDownMenu/DorpDownMenu'
 
-export const Navbar = ( ) => {
+export const Navbar = ( props ) => {
+
+    let { onSetDisplayDesktop } = props;
 
     const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
     const d = new Date();
-    let day = d.getDay();
     let date = d.getDate();
     let dayName = weekday[d.getDay()];
     let monthName = month[d.getMonth()];
     let hour = d.getHours();
     let minutes = d.getMinutes();
 
+    const [isHoverAbout, setIsHoverAbout] = useState(false)
+    const [isHoverRestart, setIsHoverRestart] = useState(false)
+    const [isHoverShutDown, setIsHoverShutDown] = useState(false)
+    const [isHoverLockScreen, setIsHoverLockScreen] = useState(false)
+
+    const [isHover, setIsHover] = useState(false)
+
     return(
         <div className='navbar'>
             <DropDownMenu className="navbar-drop-down" title={"test title"} menuItems={["Restart...","Shut Down..."]} >
-                <img className='navbar-logo' src='./images/pear-logo.png' alt='#'/>     
+                
+                <div 
+                    onMouseEnter={() => {setIsHoverAbout(true)}}
+                    onMouseLeave={() => {setIsHoverAbout(false)}} 
+                    className={isHoverAbout ? "drop-down-menu-item-hover" :"drop-down-menu-item"} >
+                    About This Mac...
+                </div>
+                <div className="drop-down-menu-item-divider" />  
+
+                <div 
+                    onMouseEnter={() => {setIsHoverRestart(true)}}
+                    onMouseLeave={() => {setIsHoverRestart(false)}} 
+                    className={isHoverRestart ? "drop-down-menu-item-hover" : "drop-down-menu-item"} >
+                    Restart...
+                </div>
+                
+
+                <div 
+                    onClick={()=>{
+                        console.log("Shut Down Clicked !")
+                    }}
+                    onMouseEnter={() => {setIsHoverShutDown(true)}}
+                    onMouseLeave={() => {setIsHoverShutDown(false)}} 
+                    className={isHoverShutDown ? "drop-down-menu-item-hover" :"drop-down-menu-item"} >
+                    Shut Down...
+                </div>
+
+                <div className="drop-down-menu-item-divider" />         
+
+                <div 
+                    onClick={()=>{
+                        onSetDisplayDesktop(false)
+                    }}
+                    onMouseEnter={() => {setIsHoverLockScreen(true)}}
+                    onMouseLeave={() => {setIsHoverLockScreen(false)}} 
+                    className={isHoverLockScreen ? "drop-down-menu-item-hover" :"drop-down-menu-item"} >
+                    Lock Screen
+                </div>
+            
             </DropDownMenu>
             <div className='navbar-time'>
                 {date + " " + monthName + " " + dayName + " " + hour+":"+minutes}

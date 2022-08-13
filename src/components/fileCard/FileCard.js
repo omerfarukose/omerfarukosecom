@@ -7,13 +7,6 @@ export const FileCard = ( props ) => {
 
     const [isCardSelected, setIsCardSelected] = useState(false)
 
-    let selectedCardClass = "file-card selected"
-
-    let nonSelectedCardClass = "file-card"
-
-    console.log("File image : ",fileImage);
-    console.log("on card click : ",onCardClick);
-
     return(
         <div 
             onClick={()=>{
@@ -21,23 +14,15 @@ export const FileCard = ( props ) => {
             }}
             onDoubleClick={onCardClick ? onCardClick : null}
             className={isCardSelected ? "file-card-selected" : "file-card"}>
-            {
-                fileImage ?
-                <img className='folder-image' src={fileImage} alt='#' style={imageStyle}/>
-                :
-                <img className='folder-image-default' src='./images/folder.png' alt='#'/>
-            } 
-            {
-                fileName ?
-                <div className='file-name'>
-                    {fileName}
-                </div>
-                :
-                <div className='file-name'>
-                    Folder
-                </div>
-            }
-            
+
+            <img className='folder-image' src={fileImage ? fileImage : './images/folder.png'} alt='#' style={imageStyle}/>
+
+            <div className='file-name'>
+
+                {fileName ? fileName : "Folder"}
+
+            </div>
+
         </div>
     )
 }

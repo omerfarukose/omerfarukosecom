@@ -1,0 +1,12 @@
+.browser-container{
+    width: 100%;
+    height: 100%;
+    background-color: #eceff1;
+}
+
+.browser-top-bar{
+    height: 40px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+}

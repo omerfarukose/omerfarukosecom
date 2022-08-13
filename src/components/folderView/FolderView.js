@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './FolderView.css'
 import { FileCard } from '../fileCard/FileCard'
+import { ThreeCircle } from '../threeCircle/ThreeCircle'
 
 export const FolderView = ( props ) => {
 
@@ -11,50 +12,7 @@ export const FolderView = ( props ) => {
     return(
         <div className='folder-view'>
             <div className='folder-left-bar'>
-                <div className='folder-left-bar-circle-icons'>
-                    <div
-                        onClick={()=>{
-                            handleClose()
-                        }}
-                        onMouseEnter={()=>{
-                            setShowIcon(true)
-                        }} 
-                        onMouseLeave={()=>{
-                            setShowIcon(false)
-                        }} 
-                        className='circle-button bg-red'>
-                        {
-                            showIcon &&
-                            <img className='top-bar-icon close' src='./images/close.png' alt='#'/>
-                        }
-                    </div>
-                    <div 
-                        onMouseEnter={()=>{
-                            setShowIcon(true)
-                        }} 
-                        onMouseLeave={()=>{
-                            setShowIcon(false)
-                        }} 
-                        className='circle-button bg-yellow'>
-                        {
-                            showIcon &&
-                            <img className='top-bar-icon minimize' src='./images/minimize.png' alt='#'/>
-                        }
-                    </div>
-                    <div 
-                        onMouseEnter={()=>{
-                            setShowIcon(true)
-                        }} 
-                        onMouseLeave={()=>{
-                            setShowIcon(false)
-                        }} 
-                        className='circle-button bg-green'>
-                        {
-                            showIcon &&
-                            <img className='top-bar-icon expand' src='./images/resize.png' alt='#'/>
-                        }
-                    </div>
-                </div>
+                <ThreeCircle onCloseClick={handleClose} showIcon={showIcon} onSetShowIcon={setShowIcon}/>
             </div>
             <div className='folder-right-container'>
                  <div className='folder-right-top-bar'>
