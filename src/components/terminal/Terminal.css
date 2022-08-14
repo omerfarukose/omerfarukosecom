@@ -3,14 +3,13 @@
     flex-direction: column;
     width: 85%;
     height: 80%;
-    
   }
   
   .terminal-top-bar{
     background-color: #1b2432;
     height: 40px;
     color: white;
-    border: 1px solid grey;
+    border: 1px solid #3f444c;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     display: flex;
@@ -56,19 +55,20 @@
   }
   
   .terminal-body{
-    background-color: #4f759b ;
+    background-color: #424a54 ;
     resize: none;
     flex: 1;
-    border: 1px solid grey;
+    border: 1px solid #3f444c;
     border-top: 0px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     color: #eceff1;
     padding: 20px;
+    font-size: 20px;
     font-family: 'Inconsolata', monospace;
   }
 
   .terminal-body:focus { 
     outline: none !important;
-    border-color: #719ECE;
+    border-color: #3f444c;
  }

@@ -9,15 +9,20 @@ function App() {
 
   return (
     <div className="app-container">
+
       {
         displayDesktop ?
-        <Desktop
-          onLockScreen={setDisplayDesktop}
-        />
-        :
-        <UserLogin
-          onLogin={setDisplayDesktop}
-        />
+
+          <Desktop
+            onLockScreen={setDisplayDesktop}
+          />
+
+          :
+          
+          <UserLogin
+            onLogin={setDisplayDesktop}
+          />
+
       }
 
     </div>

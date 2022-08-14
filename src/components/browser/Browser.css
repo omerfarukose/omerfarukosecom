@@ -1,12 +1,83 @@
 .browser-container{
     width: 100%;
-    height: 100%;
-    background-color: #eceff1;
+    background-color: #02182b;
+    font-family: 'Maven Pro', sans-serif;
+    position: absolute;
+    top:30px
 }
 
 .browser-top-bar{
-    height: 40px;
-    background-color: gray;
+    height: 30px;
+    background-color: #909cc2;
     display: flex;
     align-items: center;
+    z-index: 10;
+}
+
+.browser-top-bar-url{
+    height: 70%;
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border: 1px solid #525659;
+    border-radius: 30px;
+    font-size: 14px;
+    z-index: 1;
+}
+.browser-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.browser-header{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #06d6a0;
+}
+
+.browser-personal-accounts{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.browser-personal-accounts-images{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.browser-personal-accounts-img-circle{
+    background-color: #eceff1;
+    height: 75px;
+    width: 75px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #06d6a0;
+}
+
+.browser-personal-accounts-img{
+    height: 40px;
+    width: 40px;
+}
+
+.browser-personal-accounts-text{
+    display: flex;
+    width: 100%;
 }

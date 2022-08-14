@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './UserLogin.css'
 
 export const UserLogin = ( props ) => {
 
@@ -7,7 +8,7 @@ export const UserLogin = ( props ) => {
     const [loginPasswordValue, setLoginPasswordValue] = useState("")
 
     return(
-        <div className='login-container'>
+      <div className='login-container'>
         <img className='login-img' src="./images/bitmo-img.png" alt='#'/>
         <div className='login-user-title'>
           Ömer Faruk Köse

@@ -14,20 +14,21 @@ export const Desktop = ( props ) => {
     const [showTerminal, setShowTerminal] = useState(false)
     const [showFolder, setShowFolder] = useState(false)
     const [showBrowser, setShowBrowser] = useState(false)
+    const [showDock, setShowDock] = useState(false)
 
     return(
-        <div className='container'> 
+      <div className='container'> 
         <Navbar onSetDisplayDesktop={onLockScreen}/>
         {
           (!showFolder && !showTerminal && !showBrowser) &&
-          <div >
+          <div style={{height:"100%", display:"flex",alignItems:"center", justifyContent:"center"}}>
             <FileCard
               containerStyle={{
                 marginBottom:"10px"
               }}
               useSelectBorder={true}
               fileName="Documents"
-              onCardClick={()=>{
+              onCardDoubleClick={()=>{
                 setShowFolder(true)
               }}/>
 
@@ -36,7 +37,7 @@ export const Desktop = ( props ) => {
                 marginBottom:"10px"
               }}
               useSelectBorder={true}  
-              onCardClick={()=>{
+              onCardDoubleClick={()=>{
                 console.log("Card Clicked !")
                 setShowTerminal(true)
               }} 
@@ -49,7 +50,7 @@ export const Desktop = ( props ) => {
                 marginBottom:"10px"
               }}
               useSelectBorder={true}  
-              onCardClick={()=>{
+              onCardDoubleClick={()=>{
                 console.log(" Browser card Clicked !")
                 setShowBrowser(true)
               }} 
@@ -80,7 +81,10 @@ export const Desktop = ( props ) => {
               setShowBrowser(!showBrowser)
             }}/>
         }
-        <Dock/>
+        {
+          showDock &&
+          <Dock onFolderClick={setShowFolder} onTerminalClick={setShowTerminal} onBrowserClick={setShowBrowser}/>
+        }
       </div>
     )
 }

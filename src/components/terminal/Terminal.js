@@ -16,7 +16,7 @@ export const Terminal = ( props ) => {
                 </div>
             </div>
             <textarea className='terminal-body'>
-                Hello there, this is some text in a text area
+                Terminal functionality will be added soon.
             </textarea>
         </div>
     )

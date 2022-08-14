@@ -7,14 +7,14 @@ export const Navbar = ( props ) => {
     let { onSetDisplayDesktop } = props;
 
     const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
     const d = new Date();
     let date = d.getDate();
     let dayName = weekday[d.getDay()];
     let monthName = month[d.getMonth()];
-    let hour = d.getHours();
-    let minutes = d.getMinutes();
+    let hour = d.getHours() < 10 ? "0"+d.getHours() : d.getHours();
+    let minutes = d.getMinutes()  < 10 ? "0"+d.getMinutes() : d.getMinutes();;
 
     const [isHoverAbout, setIsHoverAbout] = useState(false)
     const [isHoverRestart, setIsHoverRestart] = useState(false)
