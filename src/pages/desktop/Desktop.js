@@ -54,7 +54,7 @@ export const Desktop = ( props ) => {
                 console.log(" Browser card Clicked !")
                 setShowBrowser(true)
               }} 
-              imageStyle={{height:"42px",width:"42px"}}
+              imageStyle={{height:"50px",width:"50px"}}
               fileName="Browser"
               fileImage={'./images/safari.png'}/>
           </div>

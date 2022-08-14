@@ -100,15 +100,15 @@ export const Browser = ( props ) => {
                                 alignItems:"flex-end",
                                 justifyContent:"flex-end",
                             }}>
-                            <p>omerfarukose@ </p>
+                            <p>omerfarukose</p>
                         </div>
                         <TypeAnimation
                             sequence={[
-                                " GitHub",
+                                "@GitHub",
                                 700,
-                                " LinkedIn",
+                                "@LinkedIn",
                                 700,
-                                " outlook.com",
+                                "@outlook.com",
                                 700,
                             ]}
                             wrapper="div"
