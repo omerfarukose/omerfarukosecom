@@ -13,8 +13,9 @@
   }
   
   .login-img{
-    height: 30vh;
-    width: 30vh;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
     border-radius: 100%;
   }
   
@@ -34,7 +35,6 @@
     border: 1px solid gray;
     padding-left: 14px;
     border-radius: 100px;
-    placeholder-color:red;
   }
   
   .login-password-input:focus{

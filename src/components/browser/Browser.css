@@ -81,3 +81,12 @@
     display: flex;
     width: 100%;
 }
+
+.type-animation{
+    font-size: '30px';
+    color: "#06d6a0";
+    width:"50%";
+    display:"flex";
+    align-items:"flex-end";
+    justify-content:"flex-end";
+}

@@ -1,16 +1,18 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import './Terminal.css'
 import { ThreeCircle } from '../threeCircle/ThreeCircle'
+import DisplayContext from '../../context/DisplayContext'
+
 export const Terminal = ( props ) => {
 
-    let { handleClose } = props
+    const { setDisplayTerminal } = useContext(DisplayContext)
 
     const [showIcon, setShowIcon] = useState(false)
 
     return(
         <div className='terminal-container'>
             <div className='terminal-top-bar'>
-                <ThreeCircle onCloseClick={handleClose} showIcon={showIcon} onSetShowIcon={setShowIcon}/>
+                <ThreeCircle onCloseClick={()=>{setDisplayTerminal(false)}} showIcon={showIcon} onSetShowIcon={setShowIcon}/>
                 <div className='top-bar-title'>
                     omerfarukose terminal
                 </div>

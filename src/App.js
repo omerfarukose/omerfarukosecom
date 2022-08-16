@@ -1,31 +1,14 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './App.css';
-import { Desktop } from './pages/desktop/Desktop';
-import { UserLogin } from './pages/userLogin/UserLogin';
+import { DisplayProvider } from './context/DisplayContext';
+import { HomePage } from './pages/home/HomePage';
 
-function App() {
-
-  const [displayDesktop, setDisplayDesktop] = useState(true)
-
+function App() {  
   return (
-    <div className="app-container">
-
-      {
-        displayDesktop ?
-
-          <Desktop
-            onLockScreen={setDisplayDesktop}
-          />
-
-          :
-          
-          <UserLogin
-            onLogin={setDisplayDesktop}
-          />
-
-      }
-
-    </div>
+    <DisplayProvider>
+        <HomePage/>
+    </DisplayProvider>
+    
   );
 }
 

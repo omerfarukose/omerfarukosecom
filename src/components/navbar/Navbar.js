@@ -1,10 +1,11 @@
-import React, { useState} from 'react'
+import React, {useState,useContext} from 'react'
 import './Navbar.css'
 import { DropDownMenu } from '../dropDownMenu/DorpDownMenu'
+import DisplayContext from '../../context/DisplayContext'
 
 export const Navbar = ( props ) => {
 
-    let { onSetDisplayDesktop } = props;
+    let { setDisplayDesktop, setDisplayRestart } = useContext(DisplayContext)
 
     const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
@@ -21,8 +22,6 @@ export const Navbar = ( props ) => {
     const [isHoverShutDown, setIsHoverShutDown] = useState(false)
     const [isHoverLockScreen, setIsHoverLockScreen] = useState(false)
 
-    const [isHover, setIsHover] = useState(false)
-
     return(
         <div className='navbar'>
             <DropDownMenu className="navbar-drop-down" title={"test title"} menuItems={["Restart...","Shut Down..."]} >
@@ -36,6 +35,10 @@ export const Navbar = ( props ) => {
                 <div className="drop-down-menu-item-divider" />  
 
                 <div 
+                    onClick={()=>{
+                        setDisplayRestart(true)
+                        setDisplayDesktop(false)
+                    }}
                     onMouseEnter={() => {setIsHoverRestart(true)}}
                     onMouseLeave={() => {setIsHoverRestart(false)}} 
                     className={isHoverRestart ? "drop-down-menu-item-hover" : "drop-down-menu-item"} >
@@ -57,7 +60,7 @@ export const Navbar = ( props ) => {
 
                 <div 
                     onClick={()=>{
-                        onSetDisplayDesktop(false)
+                        setDisplayDesktop(false)
                     }}
                     onMouseEnter={() => {setIsHoverLockScreen(true)}}
                     onMouseLeave={() => {setIsHoverLockScreen(false)}} 

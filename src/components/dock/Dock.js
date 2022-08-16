@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import './Dock.css'
 import Fade from 'react-reveal/Fade';
 import { FileCard } from '../fileCard/FileCard';
-
+import DisplayContext from '../../context/DisplayContext';
 
 export const Dock = ( props ) => {
 
-  let { onFolderClick, onTerminalClick, onBrowserClick} = props;
+  const { setDisplayFolder, setDisplayBrowser, setDisplayTerminal } = useContext(DisplayContext)
 
     const [dockFolderAnimation, setDockFolderAnimation] = useState(false)
     const [dockTerminalAnimation, setDockTerminalAnimation] = useState(false)
@@ -22,7 +22,7 @@ export const Dock = ( props ) => {
 
             <FileCard
                 onCardClick={()=>{
-                  onFolderClick(true)
+                  setDisplayFolder(true)
                 }} 
                 animation={dockFolderAnimation}
                 imageStyle={{height:"43px",width:"43px"}}
@@ -36,7 +36,7 @@ export const Dock = ( props ) => {
 
             <FileCard 
                 onCardClick={()=>{
-                  onTerminalClick(true)
+                  setDisplayTerminal(true)
                 }}
                 animation={dockTerminalAnimation}
                 imageStyle={{height:"35px",width:"35px"}}
@@ -50,8 +50,7 @@ export const Dock = ( props ) => {
 
             <FileCard 
                 onCardClick={()=>{
-                  console.log("card cLicked !!^+!'^+!'^+")
-                  onBrowserClick(true)
+                  setDisplayBrowser(true)
                 }}
                 animation={dockBrowserAnimation}
                 imageStyle={{height:"30px",width:"30px"}}

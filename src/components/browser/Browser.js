@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import './Browser.css'
 import { ThreeCircle } from '../threeCircle/ThreeCircle'
 import { TypeAnimation } from 'react-type-animation';
+import DisplayContext from '../../context/DisplayContext';
 
 
 export const Browser = ( props ) => {
 
-    let { handleClose } = props
+    let { setDisplayBrowser } = useContext(DisplayContext)
 
     const [showIcon, setShowIcon] = useState(false)
     const [displaySecondText, setDisplaySecondText] = useState(false)
@@ -20,7 +21,7 @@ export const Browser = ( props ) => {
     return(
         <div className='browser-container'>
             <div className='browser-top-bar'>
-                <ThreeCircle onCloseClick={handleClose} showIcon={showIcon} onSetShowIcon={setShowIcon}/>
+                <ThreeCircle onCloseClick={()=>{setDisplayBrowser(false)}} showIcon={showIcon} onSetShowIcon={setShowIcon}/>
                 <div className='browser-top-bar-url'>
                     <img style={{height:"85%",marginRight:"14px"}} src='./images/globe.png' alt='#'/>
                     <div style={{flex:"1"}}>
