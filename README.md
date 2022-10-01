@@ -1,3 +1,3 @@
 # My personal web site
 
-[-> ](https://omerfarukose.com)
+[omerfarukose.com](https://omerfarukose.com)
