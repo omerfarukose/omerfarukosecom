@@ -1,6 +1,6 @@
 import React, {useState,useContext} from 'react'
 import './Navbar.css'
-import { DropDownMenu } from '../dropDownMenu/DorpDownMenu'
+import { DropDownMenu } from '../DropDownMenu/DorpDownMenu'
 import DisplayContext from '../../context/DisplayContext'
 
 export const Navbar = ( props ) => {
@@ -26,44 +26,44 @@ export const Navbar = ( props ) => {
         <div className='navbar'>
             <DropDownMenu className="navbar-drop-down" title={"test title"} menuItems={["Restart...","Shut Down..."]} >
                 
-                <div 
+                <div
                     onMouseEnter={() => {setIsHoverAbout(true)}}
-                    onMouseLeave={() => {setIsHoverAbout(false)}} 
+                    onMouseLeave={() => {setIsHoverAbout(false)}}
                     className={isHoverAbout ? "drop-down-menu-item-hover" :"drop-down-menu-item"} >
                     About This Mac...
                 </div>
-                <div className="drop-down-menu-item-divider" />  
+                <div className="drop-down-menu-item-divider" />
 
-                <div 
+                <div
                     onClick={()=>{
                         setDisplayRestart(true)
                         setDisplayDesktop(false)
                     }}
                     onMouseEnter={() => {setIsHoverRestart(true)}}
-                    onMouseLeave={() => {setIsHoverRestart(false)}} 
+                    onMouseLeave={() => {setIsHoverRestart(false)}}
                     className={isHoverRestart ? "drop-down-menu-item-hover" : "drop-down-menu-item"} >
                     Restart...
                 </div>
                 
 
-                <div 
+                <div
                     onClick={()=>{
                         console.log("Shut Down Clicked !")
                     }}
                     onMouseEnter={() => {setIsHoverShutDown(true)}}
-                    onMouseLeave={() => {setIsHoverShutDown(false)}} 
+                    onMouseLeave={() => {setIsHoverShutDown(false)}}
                     className={isHoverShutDown ? "drop-down-menu-item-hover" :"drop-down-menu-item"} >
                     Shut Down...
                 </div>
 
-                <div className="drop-down-menu-item-divider" />         
+                <div className="drop-down-menu-item-divider" />
 
-                <div 
+                <div
                     onClick={()=>{
                         setDisplayDesktop(false)
                     }}
                     onMouseEnter={() => {setIsHoverLockScreen(true)}}
-                    onMouseLeave={() => {setIsHoverLockScreen(false)}} 
+                    onMouseLeave={() => {setIsHoverLockScreen(false)}}
                     className={isHoverLockScreen ? "drop-down-menu-item-hover" :"drop-down-menu-item"} >
                     Lock Screen
                 </div>
