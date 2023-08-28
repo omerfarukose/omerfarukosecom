@@ -2,20 +2,19 @@ import React, {useState,useContext} from 'react'
 import './Navbar.css'
 import { DropDownMenu } from '../DropDownMenu/DorpDownMenu'
 import DisplayContext from '../../context/DisplayContext'
+import { useEffect } from 'react'
+import { GetNavbarDate } from '../../helper/Functions'
 
 export const Navbar = ( props ) => {
 
     let { setDisplayDesktop, setDisplayRestart } = useContext(DisplayContext)
 
-    const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    const [date, setDate] = useState({});
 
-    const d = new Date();
-    let date = d.getDate();
-    let dayName = weekday[d.getDay()];
-    let monthName = month[d.getMonth()];
-    let hour = d.getHours() < 10 ? "0"+d.getHours() : d.getHours();
-    let minutes = d.getMinutes()  < 10 ? "0"+d.getMinutes() : d.getMinutes();;
+    useEffect(() => {
+        console.log("date : ", GetNavbarDate())
+        setDate(GetNavbarDate());
+    }, [])
 
     const [isHoverAbout, setIsHoverAbout] = useState(false)
     const [isHoverRestart, setIsHoverRestart] = useState(false)
@@ -69,9 +68,16 @@ export const Navbar = ( props ) => {
                 </div>
             
             </DropDownMenu>
-            <div className='navbar-time'>
-                {date + " " + monthName + " " + dayName + " " + hour+":"+minutes}
-            </div>
+
+            {
+                date &&
+                <div className='navbar-time'>
+    
+                    {date?.date + " " + date?.monthName + " " + date?.dayName + " " + date?.hour + ":" + date?.minutes}
+
+                </div>
+            }
+
         </div>
     )
 }
